@@ -29,7 +29,7 @@ To replicate Table 3
 
 Note: One may need to change a) home_dir, 2) index, 3)save_path_XXXX in these files to execute the code.
 
-3. Run "5_create_table_unbalanced.R": to replicate the entire Table 2
+3. Run "5_create_table_unbalanced.R": to replicate the entire Table 3
 
 #############################################################################################
 #############################################################################################
