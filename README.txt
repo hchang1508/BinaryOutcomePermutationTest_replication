@@ -2,7 +2,7 @@ This repository contains the replication code for Table 2 and Table 3 of the pap
 
 "Fast computation of exact confidence intervals for randomized experiments with binary outcomes".
 
-The entire calculation is carried on on Yale HPC. 
+The entire calculation is carried on Yale HPC. 
 https://research.computing.yale.edu/services/high-performance-computing
 
 #############################################################################################
