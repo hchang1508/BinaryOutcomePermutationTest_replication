@@ -1,4 +1,4 @@
-This repository contains the replication code for Table 2 and Table 3 of the paper 
+This repository contains the code for Table 2-7 in the paper
 
 "Fast computation of exact confidence intervals for randomized experiments with binary outcomes".
 
@@ -8,7 +8,7 @@ https://research.computing.yale.edu/services/high-performance-computing
 #############################################################################################
 #############################################################################################
 
-To replicate Table 2
+To create Table 2
 
 1. Run "1_simulation_balanced_case_1.R" for the First Scenario n=50,100,200
 2. Run "1_simulation_balanced_case_1_n1000.R" for the First Scenario n=1000
@@ -22,7 +22,7 @@ Note: One may need to change a) home_dir, 2) index, 3)save_path_XXXX in these fi
 #############################################################################################
 #############################################################################################
 
-To replicate Table 3
+To create Table 3
 
 1. Run "1_simulation_unbalanced_case_1.R" for the First Scenario n=50,100,200
 2. Run "1_simulation_unbalanced_case_2.R" for the Second Scenario n=50,100,200
@@ -38,7 +38,7 @@ Note: One may need to change a) home_dir, 2) index, 3)save_path_XXXX in these fi
 #############################################################################################
 #############################################################################################
 
-To replicate Table 4 and Table 6
+To create Table 4 and Table 6
 
 1. Run "1_simulation_balanced_case_1.R" for the balanced algorithm in the First Scenario n=50,100,200 
 2. Run "1_simulation_balanced_case_1_n500.R" for the balanced algorithm in the First Scenario n=500
@@ -55,7 +55,7 @@ Note: One may need to change a) home_dir, 2) index, 3)save_path_XXXX in these fi
 #############################################################################################
 #############################################################################################
 
-To replicate Table 5 and Table 7
+To create Table 5 and Table 7
 
 1. Run "1_simulation_balanced_case_2.R" for the balanced algorithm in the First Scenario n=50,100,200 
 2. Run "1_simulation_balanced_case_2_n500.R" for the balanced algorithm in the First Scenario n=500
@@ -71,7 +71,7 @@ Note: One may need to change a) home_dir, 2) index, 3)save_path_XXXX in these fi
 #############################################################################################
 #############################################################################################
 
-To replicate the counterexample in Footnote 9
+To create the counterexample in Footnote 9
 
 1. Run "1_checking_lemma3_1.R"
 
