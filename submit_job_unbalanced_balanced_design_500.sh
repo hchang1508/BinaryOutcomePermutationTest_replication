@@ -7,7 +7,7 @@
 #SBATCH --mail-user=haoge.chang@yale.edu
 #SBATCH --partition=day
 #SBATCH --time=24:00:00
-#SBATCH --array=90-100
+#SBATCH --array=1-100
 
 echo "SLURM_JOBID: " $SLURM_JOBID
 echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
@@ -24,9 +24,12 @@ module load miniconda
 conda deactivate
 conda activate r-general
 
-Rscript --vanilla 1_simulation_unbalanced_case_1.R $SLURM_ARRAY_TASK_ID 10000
+#Rscript --vanilla 1_simulation_unbalanced_case_balanced_design_1_500.R $SLURM_ARRAY_TASK_ID 20000
 
-Rscript --vanilla 1_simulation_unbalanced_case_2.R $SLURM_ARRAY_TASK_ID 10000
+#Rscript --vanilla 1_simulation_unbalanced_case_balanced_design_2_500.R $SLURM_ARRAY_TASK_ID 1000
+
+Rscript --vanilla 1_simulation_unbalanced_case_balanced_design_3_500.R $SLURM_ARRAY_TASK_ID 20000
+
 
 #Rscript --vanilla 1_simulation_unbalanced_case_1.R $SLURM_ARRAY_TASK_ID 5000
 

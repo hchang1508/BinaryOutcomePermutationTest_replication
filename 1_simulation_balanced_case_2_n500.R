@@ -14,35 +14,29 @@ index = as.integer(args[1])
 set.seed(index)
 
 #output file name
-save_path_1000=  paste0("/home/hc654/palmer_scratch/binary_outcome_sim/unbalanced_s1/n1000/",index,'_1000.csv')
+save_path_500=  paste0("/home/hc654/palmer_scratch/binary_outcome_sim/balanced_s2/n500/",index,'_500.csv')
 
-#This script contains simulations for the balanced case with SATE=0 and v11_share=0.5, v01_share=0, v10_share=0.
-#The sample sizes is n=1000
-#The number of treated units is nt=0.6*n.
+#This script contains simulations for the balanced case with SATE=0 and v11_share=0.08, v01_share=0, v10_share=0.
+#The sample sizes is n=500
+#The number of treated units is nt=n/2.
+#This test case is designed such that the Wald test is expected to perform poorly even with relatively large sample sizes.
 
 ############################################################
 #########Balanced Case and SATE=0###########################
 ############################################################
-print('Unbalanced')
-v11_share=0.5
+v11_share=0.08
 v10_share=0
 v01_share=0
 test_type=1
 nsim=1
 
 #############################
-#####n=1000###################
+#####n=500###################
 #############################
-n=1000
-nt=600
+n=500
+nt=250
 print(n)
-start.time=proc.time()
-result_1000=compare_ATE_unbalanced(nsim,n,nt,v11_share,v10_share,v01_share,1,display_progress=FALSE,warning_msg=FALSE)
-end.time=proc.time()
-print(end.time-start.time)
-write.csv(result_1000,file = save_path_1000)
-
-
-
+result_500=compare_ATE(nsim,n,nt,v11_share,v10_share,v01_share,1,display_progress=FALSE,warning_msg=FALSE)
+write.csv(result_500,file = save_path_500)
 
 

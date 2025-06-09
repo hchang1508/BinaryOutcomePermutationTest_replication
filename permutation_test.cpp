@@ -1341,3 +1341,60 @@ return_interval: boolean to return confidence intervals or confidence sets
     }
 
 }
+
+
+//[[Rcpp::export()]]
+NumericMatrix perm_test_interface_balanced_design_unbalanced_algorithm(double test_statistics, double test_type, double alpha, double epsilon,double n11, double n10, double n01, double n00, double n, double nt, double K,  NumericVector cn, double cn_length,bool display_progress=true, bool return_interval=true, bool warning_msg=false){
+
+/*
+This function performs the permutation test for the general set of parameter values. 
+test_statistics: test statistics computed from the observed data
+test_type: 1 for two-sided test using a difference-in-mean statistics
+           2 for two-sided test using a studentized difference-in-mean statistics
+           3 for two-sided test using a risk ratio
+           4 for two-sided test using an odds ratio
+n11: number of treated units with outcome 1
+n10: number of treated units with outcome 0
+n01: number of control units with outcome 1
+n00: number of control units with outcome 0
+n: total number of units
+nt: number of treated units
+K: number of Monte Carlo simulations
+cn: vector of parameter values
+cn_length: length of the vector of parameter values
+display_progress: boolean to display progress bar
+return_interval: boolean to return confidence intervals or confidence sets
+*/
+
+    if (test_type==1){
+
+        NumericMatrix output_matrix = perm_test_SATE(test_statistics, test_type, alpha, epsilon,n11, n10, n01, n00, n, nt, K, cn, cn_length, display_progress,warning_msg);
+        return output_matrix;
+    }
+    if (return_interval==false){
+
+        if (n>1000){
+            cout<<"Large Sample Size (n>1000). The program will return a confidence set. This may require a big memory."<<endl;
+        }
+        
+        //cout<<"The program will return a confidence set. "<<endl;
+        NumericMatrix output_matrix = perm_test_general_set(test_statistics, test_type, alpha, epsilon, n11, n10, n01, n00, n, nt, K, cn, cn_length, display_progress,warning_msg);
+        return output_matrix;
+
+    }else if (return_interval==true){
+         
+        if (warning_msg){
+            cout<<"The program will return a confidence interval. If a confidence set is desired, include the option return_interval=false "<<endl;
+        }
+        NumericMatrix output_matrix = perm_test_general_interval(test_statistics, test_type, alpha, epsilon, n11, n10, n01, n00, n, nt, K, cn, cn_length, display_progress,warning_msg);
+        return output_matrix;
+
+    }else{
+
+        cout<<"Invalid input"<<endl;
+        NumericMatrix output_matrix(1,1);
+        return output_matrix;
+    }
+    
+
+}

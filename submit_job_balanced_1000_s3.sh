@@ -24,5 +24,5 @@ module load miniconda
 conda deactivate
 conda activate r-general
 
-Rscript --vanilla 1_simulation_balanced_case_1_n1000.R $SLURM_ARRAY_TASK_ID
+Rscript --vanilla 1_simulation_balanced_case_3_n1000.R $SLURM_ARRAY_TASK_ID
 

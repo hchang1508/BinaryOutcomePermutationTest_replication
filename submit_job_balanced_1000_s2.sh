@@ -7,7 +7,7 @@
 #SBATCH --mail-user=haoge.chang@yale.edu
 #SBATCH --partition=day
 #SBATCH --time=24:00:00
-#SBATCH --array=1
+#SBATCH --array=1-100
 
 echo "SLURM_JOBID: " $SLURM_JOBID
 echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID

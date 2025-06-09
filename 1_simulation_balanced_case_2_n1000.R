@@ -16,7 +16,7 @@ set.seed(index)
 #output file name
 save_path_1000=  paste0("/home/hc654/palmer_scratch/binary_outcome_sim/balanced_s2/n1000/",index,'_1000.csv')
 
-#This script contains simulations for the balanced case with SATE=0 and v11_share=0.5, v01_share=0, v10_share=0.
+#This script contains simulations for the balanced case with SATE=0 and v11_share=0.08, v01_share=0, v10_share=0.
 #The sample sizes is n=1000
 #The number of treated units is nt=n/2.
 #This test case is designed such that the Wald test is expected to perform poorly even with relatively large sample sizes.
@@ -28,7 +28,7 @@ v11_share=0.08
 v10_share=0
 v01_share=0
 test_type=1
-nsim=10
+nsim=1
 
 #############################
 #####n=1000###################
